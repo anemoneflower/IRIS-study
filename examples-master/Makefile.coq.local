@@ -1,0 +1,30 @@
+# Per-project targets
+include Makefile.coq.conf
+VOFILES=$(COQMF_VFILES:.v=.vo)
+
+barrier: $(filter theories/barrier/%,$(VOFILES))
+.PHONY: barrier
+
+lecture_notes: $(filter theories/lecture_notes/%,$(VOFILES))
+.PHONY: lecture_notes
+
+spanning_tree: $(filter theories/spanning_tree/%,$(VOFILES))
+.PHONY: spanning_tree
+
+concurrent_stacks: $(filter theories/concurrent_stacks/%,$(VOFILES))
+.PHONY: concurrent_stacks
+
+logrel: $(filter theories/logrel/%,$(VOFILES))
+.PHONY: logrel
+
+logrel_heaplang: $(filter theories/logrel_heaplang/%,$(VOFILES))
+.PHONY: logrel_heaplang
+
+hocap: $(filter theories/hocap/%,$(VOFILES))
+.PHONY: hocap
+
+logatom: $(filter theories/logatom/%,$(VOFILES))
+.PHONY: logatom
+
+proph: $(filter theories/proph/%,$(VOFILES))
+.PHONY: proph
